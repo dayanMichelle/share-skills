@@ -1,24 +1,24 @@
 import type { Person } from "@/types/person";
 
-type CardProps = Pick<Person, "name" | "img" | "skills">;
+type CardProps = Pick<Person, "name" | "avatar" | "skills">;
 
-export const Card = ({ name, skills, img }: CardProps) => {
+export const Card = ({ name, skills, avatar }: CardProps) => {
   return (
     <div className="max-w-sm rounded-lg bg-indigo-200 overflow-hidden shadow-lg">
       <img
         className="w-full h-48 object-cover"
-        src={img}
+        src={avatar}
         alt="Foto de Persona"
       />
       <div className="px-6 py-4">
         <div className="font-bold text-xl text-gray-600 mb-2">{name}</div>
         <ul className="flex gap-3  list-disc pl-6">
-          {skills?.map((skill: string) => (
+          {skills?.map((skill) => (
             <li
-              key={skill}
+              key={skill.id}
               className="flex flex-row bg-indigo-400 p-1  rounded-lg text-gray-700 text-base list-none"
             >
-              {skill}
+              {skill.name}
             </li>
           ))}
         </ul>
@@ -26,4 +26,3 @@ export const Card = ({ name, skills, img }: CardProps) => {
     </div>
   );
 };
-
