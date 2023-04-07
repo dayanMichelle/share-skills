@@ -13,12 +13,12 @@ export const Card = ({ name, skills, img }: CardProps) => {
       <div className="px-6 py-4">
         <div className="font-bold text-xl text-gray-600 mb-2">{name}</div>
         <ul className="flex gap-3  list-disc pl-6">
-          {skills?.map((skill: string) => (
+          {skills?.map((skill) => (
             <li
-              key={skill}
+              key={skill.id}
               className="flex flex-row bg-indigo-400 p-1  rounded-lg text-gray-700 text-base list-none"
             >
-              {skill}
+              {skill.name}
             </li>
           ))}
         </ul>
@@ -26,4 +26,3 @@ export const Card = ({ name, skills, img }: CardProps) => {
     </div>
   );
 };
-

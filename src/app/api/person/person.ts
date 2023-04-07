@@ -1,4 +1,4 @@
-import { listaPersonas as response } from "@/mock/response";
+import { listaPersonas as response } from "@/mock/persons";
 import { Person } from "@/types/person";
 
 // Array de personas
