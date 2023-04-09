@@ -1,10 +1,14 @@
 "use client";
 import { useAuthContext } from "@/context/AuthContext";
+import logout from "@/firebase/auth/logout";
 import Link from "next/link";
 
 export const Header = () => {
   const { user } = useAuthContext();
-
+  const handleLogout = () => {
+    logout();
+  
+  };
   return (
     <header className="flex items-center justify-between py-4 px-8">
       <div className="flex items-center">
@@ -22,12 +26,21 @@ export const Header = () => {
         </h1>
       </div>
       {user ? (
-        <Link
-        href="login"
-        className="bg-white hover:bg-gray-200 text-blue-500 font-semibold py-2 px-4 rounded"
-      >
-        {user.email}
-      </Link>
+        <>
+          <Link
+            href="login"
+            className="bg-white hover:bg-gray-200 text-blue-500 font-semibold py-2 px-4 rounded"
+          >
+            {user.email}
+          </Link>
+          <Link
+            href="/"
+            onClick={handleLogout}
+            className="bg-white hover:bg-gray-200 text-blue-500 font-semibold py-2 px-4 rounded"
+          >
+            Log out
+          </Link>
+        </>
       ) : (
         <Link
           href="login"
