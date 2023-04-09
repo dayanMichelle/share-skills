@@ -28,7 +28,7 @@ export const Header = () => {
         {user ? (
           <>
             <Link
-              href="/"
+              href="profile"
               className="bg-white hover:bg-gray-200 text-blue-500 font-semibold py-2 px-4 rounded"
             >
               {user.email}

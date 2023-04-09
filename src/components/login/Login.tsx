@@ -22,7 +22,7 @@ const Login = () => {
 
     // else successful
     console.log(result)
-    return router.push("/admin")
+    return router.push("/profile")
   };
 
 

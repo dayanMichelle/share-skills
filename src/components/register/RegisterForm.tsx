@@ -24,7 +24,7 @@ const RegisterForm = () => {
     // else successful
     console.log(result);
     if (!error) {
-      return router.push("/admin");
+      return router.push("/profile");
     }
   };
   return (
