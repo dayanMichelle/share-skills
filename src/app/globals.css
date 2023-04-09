@@ -20,3 +20,20 @@ body {
   color: rgb(var(--foreground-rgb));
   background-color: #0B2447
 }
+
+/* Estilo para la barra de desplazamiento */
+::-webkit-scrollbar {
+  width: 6px; /* Ancho de la barra de desplazamiento */
+  height: 6px; /* Alto de la barra de desplazamiento */
+}
+
+/* Estilo para el pulgar de la barra de desplazamiento */
+::-webkit-scrollbar-thumb {
+  background-color: transparent; /* Color de fondo del pulgar (transparente) */
+  border-radius: 3px; /* Radio de borde del pulgar */
+}
+
+/* Estilo para la pista de la barra de desplazamiento */
+::-webkit-scrollbar-track {
+  background-color: transparent; /* Color de fondo de la pista (transparente) */
+}
