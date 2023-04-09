@@ -1,16 +1,16 @@
 "use client";
 import signUp from "@/firebase/auth/signup";
 import Link from "next/link";
-
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
 const RegisterForm = () => {
+  const router = useRouter();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
+  const [error, setError] = useState("");
 
   const [password, setPassword] = useState("");
-  const router = useRouter();
   const handleForm = async (e) => {
     // Lógica para manejar el inicio de sesión
     e.preventDefault();
@@ -23,7 +23,9 @@ const RegisterForm = () => {
 
     // else successful
     console.log(result);
-    return router.push("/admin");
+    if (!error) {
+      return router.push("/admin");
+    }
   };
   return (
     <div className="flex flex-col items-center justify-center h-screen">
@@ -36,11 +38,13 @@ const RegisterForm = () => {
         </Link>
         <form onSubmit={handleForm} className="space-y-4 text-gray-900">
           <div>
-            <label htmlFor="" className="">
+            <label htmlFor="email" className="">
               Ingresa el correo:
             </label>
             <input
               type="email"
+              id="email"
+              name="email"
               className="w-full  px-4 py-3 rounded-md border focus:outline-none focus:border-blue-500 transition duration-200"
               placeholder="Correo electrónico"
               value={email}
@@ -48,14 +52,16 @@ const RegisterForm = () => {
             />
           </div>
           <div>
-            <label htmlFor="" className="">
+            <label htmlFor="name" className="">
               Ingresa tu nombre:
             </label>
             <input
-              type="name"
+              type="text"
               className="w-full px-4 py-3 rounded-md border focus:outline-none focus:border-blue-500 transition duration-200"
               placeholder="Correo electrónico"
               value={name}
+              name="name"
+              id="name"
               onChange={(e) => setName(e.target.value)}
             />
           </div>
@@ -65,11 +71,22 @@ const RegisterForm = () => {
             </label>
             <input
               type="password"
-              className="w-full  px-4 py-3 rounded-md border focus:outline-none focus:border-blue-500 transition duration-200"
+              className="w-full px-4 py-3 rounded-md border focus:outline-none focus:border-blue-500 transition duration-200"
               placeholder="Contraseña"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              onChange={(e) => {
+                setPassword(e.target.value)
+                if(e.target.value.length < 6){
+                  setError('La contraseña debe tener al menos 6 caracteres')
+                  console.log(error)
+                }else{
+                  setError('')
+                }
+               
+              }}
             />
+            {error && <p className="text-red-600">{error}</p>}
+    
           </div>
           <button
             type="submit"

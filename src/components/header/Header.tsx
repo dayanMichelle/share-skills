@@ -7,7 +7,6 @@ export const Header = () => {
   const { user } = useAuthContext();
   const handleLogout = () => {
     logout();
-  
   };
   return (
     <header className="flex items-center justify-between py-4 px-8">
@@ -25,30 +24,32 @@ export const Header = () => {
           Share yours skills
         </h1>
       </div>
-      {user ? (
-        <>
+      <div className="flex gap-2">
+        {user ? (
+          <>
+            <Link
+              href="/"
+              className="bg-white hover:bg-gray-200 text-blue-500 font-semibold py-2 px-4 rounded"
+            >
+              {user.email}
+            </Link>
+            <Link
+              href="/"
+              onClick={handleLogout}
+              className="bg-white hover:bg-gray-200 text-blue-500 font-semibold py-2 px-4 rounded"
+            >
+              Log out
+            </Link>
+          </>
+        ) : (
           <Link
             href="login"
             className="bg-white hover:bg-gray-200 text-blue-500 font-semibold py-2 px-4 rounded"
           >
-            {user.email}
+            Iniciar sesión
           </Link>
-          <Link
-            href="/"
-            onClick={handleLogout}
-            className="bg-white hover:bg-gray-200 text-blue-500 font-semibold py-2 px-4 rounded"
-          >
-            Log out
-          </Link>
-        </>
-      ) : (
-        <Link
-          href="login"
-          className="bg-white hover:bg-gray-200 text-blue-500 font-semibold py-2 px-4 rounded"
-        >
-          Iniciar sesión
-        </Link>
-      )}
+        )}
+      </div>
     </header>
   );
 };
