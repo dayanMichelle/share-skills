@@ -1,5 +1,8 @@
 "use client";
+import signUp from "@/firebase/auth/signup";
 import Link from "next/link";
+
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 const RegisterForm = () => {
@@ -7,10 +10,20 @@ const RegisterForm = () => {
   const [name, setName] = useState("");
 
   const [password, setPassword] = useState("");
-
-  const handleLogin = () => {
+  const router = useRouter();
+  const handleForm = async (e) => {
     // Lógica para manejar el inicio de sesión
-    console.log("Iniciando sesión...");
+    e.preventDefault();
+
+    const { result, error } = await signUp(email, password);
+
+    if (error) {
+      return console.log(error);
+    }
+
+    // else successful
+    console.log(result);
+    return router.push("/admin");
   };
   return (
     <div className="flex flex-col items-center justify-center h-screen">
@@ -21,7 +34,7 @@ const RegisterForm = () => {
         >
           Registrarse
         </Link>
-        <form className="space-y-4 text-gray-900">
+        <form onSubmit={handleForm} className="space-y-4 text-gray-900">
           <div>
             <label htmlFor="" className="">
               Ingresa el correo:
@@ -58,14 +71,12 @@ const RegisterForm = () => {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
-          <Link
-            href="#"
-            type="button"
+          <button
+            type="submit"
             className="w-full text-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 rounded-md transition duration-200"
-            onClick={handleLogin}
           >
             Regitarse
-          </Link>
+          </button>
         </form>
         <p className="text-sm mt-4 text-center text-gray-500">
           ¿Ya tienes cuenta?{" "}
