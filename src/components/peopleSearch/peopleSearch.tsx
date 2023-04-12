@@ -1,7 +1,7 @@
 "use client";
 
-import { FormEvent,  useRef } from "react";
-import type { Search } from "@/types/person";
+import { FormEvent, useRef } from "react";
+import type { Search } from "@/types/skill";
 
 type PeopleSearch = {
   handlePerson: (search?: Search) => void;
@@ -10,7 +10,7 @@ type PeopleSearch = {
 function PeopleSearch({ handlePerson }: PeopleSearch) {
   const search = useRef<HTMLInputElement | null>(null);
 
-  const onSubmit = (e:FormEvent<HTMLFormElement>) => {
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (search.current) {
@@ -21,9 +21,9 @@ function PeopleSearch({ handlePerson }: PeopleSearch) {
   };
 
   return (
-    <div className="flex my-10 gap-4 flex-col items-center max-w-xs mx-auto">
+    <div className="flex my-10 gap-4 flex-col items-center max-w-ms mx-auto">
       {/* Input de búsqueda */}
-      <label htmlFor="search">
+      <label htmlFor="search" className="text-lg">
         Busca tu nuevo profesor para tu nueva skill:
       </label>
       <form onSubmit={onSubmit} className="flex items-center gap-3 flex-row">

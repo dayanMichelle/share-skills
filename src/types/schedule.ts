@@ -33,7 +33,7 @@ type Hour =
 type Status = "reservada" | "disponible";
 
 type BlockHour = {
-  id:string;
+  id: string;
   hour: Hour;
   status: Status;
   name: "learn" | "teach";
