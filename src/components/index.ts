@@ -6,3 +6,5 @@ export * from "./checkbox";
 export * from "./formRegister";
 export * from "./skills";
 export * from "./avatar";
+export * from './infoProfile'
+export * from './accountSettingsMenu'
