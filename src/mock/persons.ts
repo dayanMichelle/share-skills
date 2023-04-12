@@ -1,9 +1,9 @@
-import { Person } from "@/types/person";
 import { monthCalendar } from "./schedule";
+import type { Person } from "@/types/person";
 
 export const listaPersonas: Person[] = [
   {
-    id: 1,
+    id: "h9HUvRTuLv30p3DSFHQ",
     name: "timon",
     avatar:
       "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -17,7 +17,7 @@ export const listaPersonas: Person[] = [
     points: 100,
   },
   {
-    id: 2,
+    id: "grs",
     name: "pumba",
     avatar:
       "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -32,7 +32,7 @@ export const listaPersonas: Person[] = [
     points: 100,
   },
   {
-    id: 3,
+    id: "fse",
     name: "simba",
     avatar:
       "https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -46,7 +46,7 @@ export const listaPersonas: Person[] = [
     points: 100,
   },
   {
-    id: 4,
+    id: "fsefsef",
     name: "scar",
     avatar:
       "https://images.pexels.com/photos/774095/pexels-photo-774095.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -60,7 +60,7 @@ export const listaPersonas: Person[] = [
     points: 100,
   },
   {
-    id: 5,
+    id: "fesfefesf",
     name: "rafiki",
     avatar:
       "https://images.pexels.com/photos/718978/pexels-photo-718978.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -75,7 +75,7 @@ export const listaPersonas: Person[] = [
     points: 100,
   },
   {
-    id: 6,
+    id: "fsefes",
     name: "nala",
     avatar:
       "https://images.pexels.com/photos/789822/pexels-photo-789822.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -86,7 +86,7 @@ export const listaPersonas: Person[] = [
     points: 100,
   },
   {
-    id: 7,
+    id: "gregre",
     name: "mufasa",
     avatar:
       "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -97,7 +97,7 @@ export const listaPersonas: Person[] = [
     points: 100,
   },
   {
-    id: 8,
+    id: "gregrehr",
     name: "zazu",
     avatar:
       "https://images.pexels.com/photos/4058316/pexels-photo-4058316.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -111,7 +111,7 @@ export const listaPersonas: Person[] = [
     points: 100,
   },
   {
-    id: 9,
+    id: "htrgresg",
     name: "sarabi",
     avatar:
       "https://images.pexels.com/photos/712521/pexels-photo-712521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -125,7 +125,7 @@ export const listaPersonas: Person[] = [
     points: 100,
   },
   {
-    id: 10,
+    id: "rewggwe",
     name: "shenzi",
     avatar:
       "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -140,7 +140,7 @@ export const listaPersonas: Person[] = [
     points: 100,
   },
   {
-    id: 11,
+    id: "gewrgregre",
     name: "banzai",
     avatar:
       "https://images.pexels.com/photos/371160/pexels-photo-371160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -154,7 +154,7 @@ export const listaPersonas: Person[] = [
     points: 100,
   },
   {
-    id: 12,
+    id: "fewgebtrgvdfv",
     name: "zazu",
     avatar:
       "https://images.pexels.com/photos/4058316/pexels-photo-4058316.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -168,7 +168,7 @@ export const listaPersonas: Person[] = [
     points: 100,
   },
   {
-    id: 13,
+    id: "gregergrbr",
     name: "sarabi",
     avatar:
       "https://images.pexels.com/photos/712521/pexels-photo-712521.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -182,7 +182,7 @@ export const listaPersonas: Person[] = [
     points: 100,
   },
   {
-    id: 14,
+    id: "fwegbgnfbnmb",
     name: "shenzi",
     avatar:
       "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
@@ -193,7 +193,7 @@ export const listaPersonas: Person[] = [
     points: 100,
   },
   {
-    id: 15,
+    id: "jyhtrgrfd",
     name: "banzai",
     avatar:
       "https://images.pexels.com/photos/371160/pexels-photo-371160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",

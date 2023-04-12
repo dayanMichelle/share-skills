@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getPersons } from "@/services/person";
-import type { Person, Search } from "@/types/person";
+import type { Person } from "@/types/person";
+import type { Search } from "@/types/skill";
 
 export function usePerson() {
   const [persons, setPersons] = useState<Person[]>([]);
