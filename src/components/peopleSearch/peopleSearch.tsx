@@ -1,7 +1,7 @@
 "use client";
 
-import { Search } from "@/types/skill";
-import { FormEvent,  useRef } from "react";
+import { FormEvent, useRef } from "react";
+import type { Search } from "@/types/skill";
 
 type PeopleSearch = {
   handlePerson: (search?: Search) => void;
@@ -10,7 +10,7 @@ type PeopleSearch = {
 function PeopleSearch({ handlePerson }: PeopleSearch) {
   const search = useRef<HTMLInputElement | null>(null);
 
-  const onSubmit = (e:FormEvent<HTMLFormElement>) => {
+  const onSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     if (search.current) {

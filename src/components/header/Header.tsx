@@ -1,13 +1,16 @@
 "use client";
+
+import Link from "next/link";
 import { useAuthContext } from "@/context/AuthContext";
 import logout from "@/firebase/auth/logout";
-import Link from "next/link";
 
 export const Header = () => {
   const { user } = useAuthContext();
+
   const handleLogout = () => {
     logout();
   };
+
   return (
     <header className="flex items-center justify-between py-4 px-8">
       <div className="flex items-center">

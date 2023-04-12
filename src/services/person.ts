@@ -1,4 +1,5 @@
-import type { Person, Search } from "@/types/person";
+import type { Person } from "@/types/person";
+import type { Search } from "@/types/skill";
 
 export const getPersons = async (search?: Search): Promise<Person[]> => {
   const url = new URL("http://localhost:3001/api/person");

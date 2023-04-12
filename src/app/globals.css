@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "@fortawesome/fontawesome-free/css/all.min.css";
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -18,7 +19,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background-color: #0B2447
+  background-color: #0b2447;
 }
 
 /* Estilo para la barra de desplazamiento */

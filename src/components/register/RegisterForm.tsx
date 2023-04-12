@@ -1,37 +1,37 @@
 "use client";
-import signUp from "@/firebase/auth/signup";
+
+import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useState } from "react";
+import { signUpUser } from "@/services/user";
 
 const RegisterForm = () => {
   const router = useRouter();
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [error, setError] = useState("");
 
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
   const [password, setPassword] = useState("");
-  const handleForm = async (e) => {
+
+  const handleForm = async (e: React.FormEvent<HTMLFormElement>) => {
     // Lógica para manejar el inicio de sesión
     e.preventDefault();
-
-    const { result, error } = await signUp(email, password);
+    const { result, error } = await signUpUser(email, password);
 
     if (error) {
       return console.log(error);
     }
 
     // else successful
-    console.log(result);
     if (!error) {
-      return router.push("/profile");
+      return router.push(`/register/form`);
     }
   };
+
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <div className="bg-white p-8 rounded-md shadow-md w-80">
         <Link
-          href="register"
+          href="register/form"
           className="text-3xl font-bold text-center text-gray-900 mb-6"
         >
           Registrarse
@@ -51,20 +51,7 @@ const RegisterForm = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-          <div>
-            <label htmlFor="name" className="">
-              Ingresa tu nombre:
-            </label>
-            <input
-              type="text"
-              className="w-full px-4 py-3 rounded-md border focus:outline-none focus:border-blue-500 transition duration-200"
-              placeholder="Correo electrónico"
-              value={name}
-              name="name"
-              id="name"
-              onChange={(e) => setName(e.target.value)}
-            />
-          </div>
+
           <div>
             <label htmlFor="" className="">
               ingresa una contraseña:
@@ -75,18 +62,16 @@ const RegisterForm = () => {
               placeholder="Contraseña"
               value={password}
               onChange={(e) => {
-                setPassword(e.target.value)
-                if(e.target.value.length < 6){
-                  setError('La contraseña debe tener al menos 6 caracteres')
-                  console.log(error)
-                }else{
-                  setError('')
+                setPassword(e.target.value);
+                if (e.target.value.length < 6) {
+                  setError("La contraseña debe tener al menos 6 caracteres");
+                  console.log(error);
+                } else {
+                  setError("");
                 }
-               
               }}
             />
             {error && <p className="text-red-600">{error}</p>}
-    
           </div>
           <button
             type="submit"

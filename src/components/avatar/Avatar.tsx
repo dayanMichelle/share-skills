@@ -1,6 +1,4 @@
-import React from "react";
-
-const Avatar = ({
+export const Avatar = ({
   src = "https://images.pexels.com/photos/16039744/pexels-photo-16039744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
 }) => {
   return (
@@ -13,5 +11,3 @@ const Avatar = ({
     </div>
   );
 };
-
-export default Avatar;

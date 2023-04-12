@@ -1,2 +1,1 @@
-
-export *  from './InfoProfile'
+export { default as InfoProfile } from "./InfoProfile";

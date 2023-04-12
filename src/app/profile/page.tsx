@@ -1,6 +1,6 @@
-import AccountSettingsMenu from "@/components/accountSettingsMenu/AccountSettingsMenu";
-import InfoProfile from "@/components/infoProfile/InfoProfile";
 import React from "react";
+import AccountSettingsMenu from "@/components/accountSettingsMenu/AccountSettingsMenu";
+import { InfoProfile } from "@/components";
 
 const Profile = () => {
   return (
