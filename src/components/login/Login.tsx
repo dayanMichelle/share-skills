@@ -5,26 +5,23 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import signIn from "@/firebase/auth/signin";
 
-
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
 
-
-  const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { result, error } = await signIn(email, password);
 
     if (error) {
-        return console.log(error)
+      return console.log(error);
     }
 
     // else successful
-    console.log(result)
-    return router.push("/profile")
+    console.log(result);
+    return router.push("/profile");
   };
-
 
   return (
     <div className="flex flex-col items-center justify-center h-screen">

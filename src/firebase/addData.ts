@@ -4,9 +4,13 @@ import { getFirestore, doc, setDoc } from "firebase/firestore";
 
 const db = getFirestore(firebase_app);
 
-type PersonOmit = Partial<Person>
+type PersonOmit = Partial<Person>;
 
-export default async function addData(collection:string, id:string, data: PersonOmit) {
+export default async function addData(
+  collection: string,
+  id: string,
+  data: PersonOmit
+) {
   let result = null;
   let error = null;
 

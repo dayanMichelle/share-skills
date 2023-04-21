@@ -11,7 +11,7 @@ const RegisterForm = () => {
   const [error, setError] = useState("");
 
   const [password, setPassword] = useState("");
-  const handleForm = async (e:React.FormEvent<HTMLFormElement>) => {
+  const handleForm = async (e: React.FormEvent<HTMLFormElement>) => {
     // Lógica para manejar el inicio de sesión
     e.preventDefault();
 
@@ -75,18 +75,16 @@ const RegisterForm = () => {
               placeholder="Contraseña"
               value={password}
               onChange={(e) => {
-                setPassword(e.target.value)
-                if(e.target.value.length < 6){
-                  setError('La contraseña debe tener al menos 6 caracteres')
-                  console.log(error)
-                }else{
-                  setError('')
+                setPassword(e.target.value);
+                if (e.target.value.length < 6) {
+                  setError("La contraseña debe tener al menos 6 caracteres");
+                  console.log(error);
+                } else {
+                  setError("");
                 }
-               
               }}
             />
             {error && <p className="text-red-600">{error}</p>}
-    
           </div>
           <button
             type="submit"
