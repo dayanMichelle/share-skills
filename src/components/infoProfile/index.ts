@@ -1,2 +1,1 @@
-
-export *  from './InfoProfile'
+export * from "./InfoProfile";

@@ -5,13 +5,13 @@ import React from "react";
 const FormNombre = () => {
   const router = useRouter();
   return (
-    <div>
+    <form>
       <label htmlFor="name">Ingrese nombre;</label>
       <input type="text" placeholder="Ingrese nombre..." />
       <button onClick={() => router.push("/profile")} type="submit">
         enviar
       </button>
-    </div>
+    </form>
   );
 };
 
