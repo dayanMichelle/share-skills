@@ -29,7 +29,7 @@ export const Card = ({ name, id, skills, avatar }: CardProps) => {
                   key={skill.id}
                   className="bg-indigo-400 p-1 h-auto rounded-lg text-white text-base list-none"
                 >
-                  {skill.name}
+                  {skill}
                 </li>
               ))}
             </ul>
