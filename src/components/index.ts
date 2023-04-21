@@ -8,3 +8,4 @@ export * from "./skills";
 export * from "./avatar";
 export * from './infoProfile'
 export * from './accountSettingsMenu'
+export * from './loader'

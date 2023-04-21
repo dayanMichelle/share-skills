@@ -1,6 +1,6 @@
 import React from "react";
 
-export const AccountSettingsMenu = () => {
+const AccountSettingsMenu = () => {
   return (
     <div className="w-48 p-4 text-gray-900 shadow-lg">
       <h3 className="text-lg font-semibold mb-4">Configuración de Cuenta</h3>
@@ -50,4 +50,4 @@ export const AccountSettingsMenu = () => {
   );
 };
 
-
+export default AccountSettingsMenu;
