@@ -1,6 +1,8 @@
 import { MonthCalendar } from "@/types/schedule";
 import { Skill } from "@/types/skill";
 
+
+
 export interface Person {
   id: string;
   name: string;

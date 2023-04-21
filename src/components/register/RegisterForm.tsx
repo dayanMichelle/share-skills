@@ -11,7 +11,7 @@ const RegisterForm = () => {
   const [error, setError] = useState("");
 
   const [password, setPassword] = useState("");
-  const handleForm = async (e) => {
+  const handleForm = async (e:React.FormEvent<HTMLFormElement>) => {
     // Lógica para manejar el inicio de sesión
     e.preventDefault();
 

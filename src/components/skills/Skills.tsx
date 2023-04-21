@@ -1,6 +1,11 @@
 import React from "react";
 
-const Skills = ({ skills, title }) => {
+type SkillsProps = {
+  skills: string[],
+  title: string
+}
+
+const Skills = ({ skills, title }:SkillsProps) => {
   return (
     <div className="mx-auto text-gray-700  rounded-lg shadow-lg p-8 mt-10 w-10/12 bg-white">
       <h4 className="font-bold mb-3">{title}</h4>

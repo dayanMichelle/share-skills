@@ -12,7 +12,7 @@ const Login = () => {
   const router = useRouter();
 
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const { result, error } = await signIn(email, password);
 
