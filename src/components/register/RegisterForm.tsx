@@ -53,7 +53,7 @@ const RegisterForm = () => {
           </div>
 
           <div>
-            <label htmlFor="" className="">
+            <label htmlFor="password" className="">
               ingresa una contraseña:
             </label>
             <input
@@ -61,6 +61,7 @@ const RegisterForm = () => {
               className="w-full px-4 py-3 rounded-md border focus:outline-none focus:border-blue-500 transition duration-200"
               placeholder="Contraseña"
               value={password}
+              id="password"
               onChange={(e) => {
                 setPassword(e.target.value);
                 if (e.target.value.length < 6) {

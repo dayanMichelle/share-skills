@@ -1,3 +1,3 @@
 export default function Home() {
-  return <button type="submit"></button>;
+  return <h1>user</h1>;
 }

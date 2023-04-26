@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useAuthContext } from "@/context/AuthContext";
 import logout from "@/firebase/auth/logout";
+import React from "react";
 
 export const Header = () => {
   const { user } = useAuthContext();

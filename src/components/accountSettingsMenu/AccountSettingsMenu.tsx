@@ -1,5 +1,3 @@
-import React from "react";
-
 export const AccountSettingsMenu = () => {
   return (
     <div className="w-48 p-4 text-gray-900 shadow-lg">
@@ -49,5 +47,3 @@ export const AccountSettingsMenu = () => {
     </div>
   );
 };
-
-
