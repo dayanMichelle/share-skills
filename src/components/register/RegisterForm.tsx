@@ -1,32 +1,32 @@
 "use client";
-
-import React, { useState } from "react";
+import signUp from "@/firebase/auth/signup";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { signUpUser } from "@/services/user";
+import React, { useState } from "react";
 
 const RegisterForm = () => {
   const router = useRouter();
-
   const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
   const [error, setError] = useState("");
-  const [password, setPassword] = useState("");
 
+  const [password, setPassword] = useState("");
   const handleForm = async (e: React.FormEvent<HTMLFormElement>) => {
     // Lógica para manejar el inicio de sesión
     e.preventDefault();
-    const { result, error } = await signUpUser(email, password);
+
+    const { result, error } = await signUp(email, password);
 
     if (error) {
       return console.log(error);
     }
 
     // else successful
+    console.log(result);
     if (!error) {
-      return router.push(`/register/form`);
+      return router.push("/register/form");
     }
   };
-
   return (
     <div className="flex flex-col items-center justify-center h-screen">
       <div className="bg-white p-8 rounded-md shadow-md w-80">
@@ -51,7 +51,20 @@ const RegisterForm = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
-
+          <div>
+            <label htmlFor="name" className="">
+              Ingresa tu nombre:
+            </label>
+            <input
+              type="text"
+              className="w-full px-4 py-3 rounded-md border focus:outline-none focus:border-blue-500 transition duration-200"
+              placeholder="Correo electrónico"
+              value={name}
+              name="name"
+              id="name"
+              onChange={(e) => setName(e.target.value)}
+            />
+          </div>
           <div>
             <label htmlFor="" className="">
               ingresa una contraseña:

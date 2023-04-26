@@ -3,7 +3,7 @@ import signIn from "@/firebase/auth/signin";
 import signUp from "@/firebase/auth/signup";
 import type { Person } from "@/types/person";
 
-type DataPerson = Pick<Person, "name" | "skills" | "wantLearn">;
+export type DataPerson = Pick<Person, "name" | "skills" | "wantLearn">;
 
 export async function createUser(uid: string, data: DataPerson) {
   const { result, error } = await addData("users", uid, data);

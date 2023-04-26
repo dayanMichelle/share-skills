@@ -1,17 +1,18 @@
-import type { Skill } from "@/types/skill";
+import React from "react";
 
 type SkillsProps = {
-  skills: Skill[];
+  skills: string[];
   title: string;
 };
-export const Skills = ({ skills, title }: SkillsProps) => {
+
+const Skills = ({ skills, title }: SkillsProps) => {
   return (
     <div className="mx-auto text-gray-700  rounded-lg shadow-lg p-8 mt-10 w-10/12 bg-white">
       <h4 className="font-bold mb-3">{title}</h4>
       <ul className="flex flex-row gap-4">
-        {skills.map(({ id, name }) => (
-          <li key={id} className="border py-2 px-4 rounded">
-            {name}
+        {skills.map((skill) => (
+          <li key={skill} className="border py-2 px-4 rounded">
+            {skill}
           </li>
         ))}
       </ul>
@@ -21,3 +22,5 @@ export const Skills = ({ skills, title }: SkillsProps) => {
     </div>
   );
 };
+
+export default Skills;
