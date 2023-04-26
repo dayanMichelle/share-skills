@@ -1,9 +1,9 @@
 "use client";
-
-import React, { useState } from "react";
 import Link from "next/link";
+import signUp from "@/firebase/auth/signup";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
-import { loginUser } from "@/services/user";
+import signIn from "@/firebase/auth/signin";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -12,7 +12,7 @@ const Login = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const { result, error } = await loginUser(email, password);
+    const { result, error } = await signIn(email, password);
 
     if (error) {
       return console.log(error);

@@ -1,1 +1,1 @@
-export { default as InfoProfile } from "./InfoProfile";
+export * from "./InfoProfile";
