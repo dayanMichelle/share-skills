@@ -4,7 +4,10 @@ import type { Person } from "@/types/person";
 type ListCardProps = {
   persons: Person[];
 };
-function ListCard({ persons }: ListCardProps) {
+
+
+export function ListCard({ persons }: ListCardProps) {
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       {persons.map(({ name, skills, id, avatar }) => (
@@ -15,4 +18,3 @@ function ListCard({ persons }: ListCardProps) {
     </div>
   );
 };
-export default ListCard
