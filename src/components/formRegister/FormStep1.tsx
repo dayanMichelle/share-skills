@@ -1,5 +1,6 @@
 import { Checkbox } from "@/components";
 import { listSkills } from "@/mock/skills";
+import { Skill } from "@/types/skill";
 
 type FormStep1Props = {
   name: string;
@@ -40,7 +41,7 @@ export const FormStep1 = ({ name, setName, handleForm }: FormStep1Props) => {
           </label>
 
           <div className="grid grid-cols-2 gap-4">
-            {listSkills.map(({ id, name }) => (
+            {listSkills.map(({ id, name }: Skill) => (
               <Checkbox
                 key={id} // Asegúrate de incluir una clave única para cada iteración del mapa
                 skill={name}
@@ -58,7 +59,7 @@ export const FormStep1 = ({ name, setName, handleForm }: FormStep1Props) => {
 
           <div className="grid grid-cols-2 gap-4">
             {listSkills.map(({ id, name }) => (
-              <Checkbox key={name} skill={name} />
+              <Checkbox key={id} skill={name} />
             ))}
           </div>
         </div>
