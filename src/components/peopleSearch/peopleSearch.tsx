@@ -1,13 +1,13 @@
 "use client";
 
-import { FormEvent, useRef } from "react";
+import React, { FormEvent, useRef } from "react";
 import type { Search } from "@/types/skill";
 
-type PeopleSearch = {
+type PeopleSearchProps = {
   handlePerson: (search?: Search) => void;
 };
 
-function PeopleSearch({ handlePerson }: PeopleSearch) {
+function PeopleSearch({ handlePerson }: PeopleSearchProps) {
   const search = useRef<HTMLInputElement | null>(null);
 
   const onSubmit = (e: FormEvent<HTMLFormElement>) => {

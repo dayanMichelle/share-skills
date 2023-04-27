@@ -1,4 +1,4 @@
-import { Skill } from "@/types/person";
+import { type Skill } from "@/types/skill";
 
 export const listSkills: Skill[] = [
   { id: "1", name: "Programación en Python" },

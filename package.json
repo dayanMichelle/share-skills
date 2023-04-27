@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "format": "npx prettier --write ."
+    "format": "npx prettier --write .",
+    "a11y": "npx eslint --quiet --no-error-on-unmatched-pattern --plugin=jsx-a11y ."
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",
@@ -15,7 +16,6 @@
     "@types/react": "18.0.33",
     "@types/react-dom": "18.0.11",
     "autoprefixer": "10.4.14",
-    "eslint": "8.37.0",
     "eslint-config-next": "13.3.0",
     "firebase": "^9.19.1",
     "next": "13.3.0",
@@ -27,6 +27,9 @@
     "typescript": "5.0.3"
   },
   "devDependencies": {
+    "eslint": "^8.39.0",
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
     "prettier": "2.8.7"
   }
 }
